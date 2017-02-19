@@ -69,6 +69,10 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
+    def set_movie
+       @movie = Movie.find(params[:movie_id])      
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:rating, :comment)
