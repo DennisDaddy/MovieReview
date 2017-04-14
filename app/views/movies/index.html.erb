@@ -12,7 +12,10 @@ SCSS from the start in order to take advantage of Bootstrap</p>
   <% @movies.each do |movie| %>
   <div class="col-sm-6 col-md-3">
     <div class="thumbnail">
+
     <%= link_to (image_tag movie.picture.url), movie %>
+     <%= movie.title %>
+    <%= truncate(movie.description, length: 50, separator: ''){ link_to 'Read More', movie_path(movie) } %>
     </div>
   </div>
   <% end %>
